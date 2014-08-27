@@ -1,0 +1,7 @@
+.DS_Store
+node_modules
+app/server/modules/email-settings-mine.js
+.idea
+.gradle
+*.zip
+app/build
