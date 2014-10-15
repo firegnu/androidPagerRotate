@@ -399,7 +399,6 @@ public class BookLayout extends FrameLayout {
 	}
 
 
-
 	class BookView extends SurfaceView implements SurfaceHolder.Callback {
 		DrawThread dt;
 		SurfaceHolder surfaceHolder;
@@ -415,6 +414,11 @@ public class BookLayout extends FrameLayout {
         float starty = 0f;
         float endx = 0f;
         float endy = 0f;
+
+        public int currentViewToolId = 0;
+        public boolean canUndo = true;
+        public boolean canRedo = true;
+        public boolean bReadOnlyStatus = false;
 
 		public BookView(Context context) {
 			super(context);
@@ -781,6 +785,43 @@ public class BookLayout extends FrameLayout {
         @Override
         public void onDraw(Canvas canvas) {
 
+        }
+
+
+        public void setCurrentTool(int currentToolID) {
+            currentViewToolId = currentToolID;
+        }
+
+        public int getCurrentTool() {
+            return currentViewToolId;
+        }
+
+        public void setCurrentViewReadOnly(boolean bReadOnly) {
+            bReadOnlyStatus = bReadOnly;
+        }
+
+        public void setCurrentViewContent(String viewContent) {
+
+        }
+
+        public String getCurrentViewContent() {
+            return "";
+        }
+
+        public void undoLastOperator() {
+
+        }
+
+        public boolean canUndoLastOperator() {
+            return canUndo;
+        }
+
+        public void redoLastOperator() {
+
+        }
+
+        public boolean canRedoLastOperator() {
+            return canRedo;
         }
 	}
 
