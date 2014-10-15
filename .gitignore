@@ -5,5 +5,5 @@ app/server/modules/email-settings-mine.js
 .gradle
 *.zip
 app/build
-*.iml
-*.properties
+.iml
+.properties
